@@ -1,0 +1,18 @@
+name: release
+on:
+  push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute version
+        run: echo Comput version
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "running tests"
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - run: echo Package
