@@ -1,0 +1,13 @@
+name: inspect
+on:
+  push
+jobs:
+  onejob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the repository using the checkout action from topic 06
+        uses: actions/checkout@v4
+      - name: print the runner's kernel details and the repository file listing
+        run: uname -a
+      - name: print how many files the repository contains
+        run: find | wc -l
